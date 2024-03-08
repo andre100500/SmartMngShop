@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AE4B04C7-54CA-4DE7-86B2-45D348A10415}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3D3673A6-919B-4E6F-B2D3-4AAD704814CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMngShop.Web", "SmartMngShop.Web\SmartMngShop.Web.csproj", "{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35063DF0-B0A9-4A82-92D3-EEA73E5492C8} = {3D3673A6-919B-4E6F-B2D3-4AAD704814CC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E6D8663-49A2-4EBC-A3FC-51CD3DED1482}
+	EndGlobalSection
+EndGlobal
