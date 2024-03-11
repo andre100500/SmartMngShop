@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3D3673A6-919B-4E6F-B2D3-4AAD704814CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMngShop.Web", "SmartMngShop.Web\SmartMngShop.Web.csproj", "{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMngShop.Web", "SmartMngShop.Web\SmartMngShop.Web.csproj", "{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
