@@ -1,7 +1,9 @@
+
 using SmartMngShop.Web.Components;
+using SmartMngShop.Web.Extensions.FrameworkExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.ConfigureIdentity();
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();

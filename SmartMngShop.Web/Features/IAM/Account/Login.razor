@@ -27,12 +27,12 @@
     [SupplyParameterFromForm]
     public LoginModel LoginForm { get; set; } = new();
 
-    public async Task PerfomrLogin(EditContext editContext)
+    public async Task PerformLogin(EditContext editContext)
     {
         navigationManager.NavigateTo("/");
     }
 
-    private class LoginModel
+    public class LoginModel
     {
         [Required]
         [EmailAddress]
