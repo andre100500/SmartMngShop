@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
 using SmartMngShop.Web.Services;
 namespace SmartMngShop.Web.Extensions.FrameworkExtensions
 {
@@ -8,6 +9,21 @@ namespace SmartMngShop.Web.Extensions.FrameworkExtensions
         {
             services.AddCascadingAuthenticationState();
             services.AddScoped<AuthenticationStateProvider, AuthStateRevalidation>();
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = IdentityConstants.ApplicationScheme;
+                options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
+                options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+
+            })
+                .AddIdentityCookies();
+
+            services.AddScoped<CookieEvents>();
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.EventsType = typeof(CookieEvents);
+            });
 
             return services; 
         }
