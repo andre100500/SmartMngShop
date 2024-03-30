@@ -3,11 +3,12 @@ using SmartMngShop.Web.Components;
 using SmartMngShop.Web.Extensions.FrameworkExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.ConfigureIdentity();
-builder.Services.ConfigureAuthentication();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.ConfigureIdentity();
+builder.Services.ConfigureAuthentication();
 
 var app = builder.Build();
 
