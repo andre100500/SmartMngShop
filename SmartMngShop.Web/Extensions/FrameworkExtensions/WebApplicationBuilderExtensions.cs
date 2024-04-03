@@ -11,7 +11,7 @@ namespace SmartMngShop.Web.Extensions.FrameworkExtensions
             var cs = builder.Configuration.GetConnectionString("Default");
             builder.Services.AddDbContextFactory<AppDbContext>(opt=> opt.UseSqlServer(cs));
             builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(cs));
-            builder.Services.AddIdentityCore<AppDbContext>(opt =>
+            IdentityBuilder identityBuilder = builder.Services.AddIdentityCore<AppDbContext>(opt =>
             {
                 opt.Password.RequireDigit = false;
                 opt.Password.RequiredLength = 5;
