@@ -11,14 +11,14 @@ namespace SmartMngShop.Web.Extensions.FrameworkExtensions
             var cs = builder.Configuration.GetConnectionString("Default");
             builder.Services.AddDbContextFactory<AppDbContext>(opt=> opt.UseSqlServer(cs));
             builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(cs));
-            IdentityBuilder identityBuilder = builder.Services.AddIdentityCore<IdentityUser>(opt =>
+            builder.Services.AddIdentityCore<IdentityUser>(opt =>
             {
                 opt.Password.RequireDigit = false;
                 opt.Password.RequiredLength = 5;
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric = false;
-                opt.ClaimsIdentity.UserIdClaimType = "smartMngShop";
+                opt.ClaimsIdentity.UserIdClaimType = "smartMngShopID";
             })
                 .AddRoles<IdentityRole>()
                 .AddSignInManager()
