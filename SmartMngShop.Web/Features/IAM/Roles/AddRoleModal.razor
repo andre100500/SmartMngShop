@@ -1,5 +1,24 @@
-﻿<h3>AddRoleModal</h3>
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.Extensions.DependencyInjection
+@using SmartMngShop.Web.Data
+<h3>AddRoleModal</h3>
+@inject IServiceScopeFactory servicesFactory
+@inject RoleManager<IdentityRole> roleManager
 
 @code {
+    [SupplyParameterFromForm]
+    public required string NewRoleName { get; set; } = string.Empty;
+    public EventCallback<IdentityRole> OnRoleAdded { get; set; }
 
+    public async Task SubmitNewRole ()
+    {
+        var scope = servicesFactory.CreateScope();
+        var roleManager = scope.ServiceProvider
+        .GetRequiredService<RoleManager<IdentityRole>>();
+        var role = new IdentityRole(NewRoleName);
+        var createdNewRole = await roleManager.CreateAsync(role);
+        await OnRoleAdded.InvokeAsync(role);
+        NewRoleName = string.Empty;
+    }
 }

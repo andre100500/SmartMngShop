@@ -5,18 +5,22 @@
 
 @page "/iam/roles"
 @inject IDbContextFactory<AppDbContext> contextFactory
+@attribute [StreamRendering(true)]
 
 <PageTitle>Roles</PageTitle>
-
-
+@if (IsLoading){
+    <div>Is Loading page...</div>
+}
 
 @code {
     private List<IdentityRole> Roles { get; set; } = new();
+    private bool IsLoading { get; set; } = true;
 
     protected override async Task OnInitializedAsync()
     {
         using var context = await contextFactory.CreateDbContextAsync();
         Roles = await context.Roles.ToListAsync();
+        IsLoading = false;
     }
     private async Task DeleteRole(IdentityRole role)
     {
@@ -24,5 +28,9 @@
         context.Roles.Remove(role);
         await context.SaveChangesAsync();
         Roles.Remove(role);
+    }
+    private async Task UpdateRoles (IdentityRole role)
+    {
+        Roles.Add(role);
     }
 }
