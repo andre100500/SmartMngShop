@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3D3673A6-919
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMngShop.Web", "SmartMngShop.Web\SmartMngShop.Web.csproj", "{35063DF0-B0A9-4A82-92D3-EEA73E5492C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMngShop.AppHost", "SmartMngShop.AppHost\SmartMngShop.AppHost.csproj", "{12D1D8B1-A24E-45B9-B32E-74ADE33EC55C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMngShop.AppHost", "SmartMngShop.AppHost\SmartMngShop.AppHost.csproj", "{12D1D8B1-A24E-45B9-B32E-74ADE33EC55C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMngShop.ServiceDefaults", "SmartMngShop.ServiceDefaults\SmartMngShop.ServiceDefaults.csproj", "{2F789D87-CE00-477C-A875-E28452651C19}"
 EndProject
