@@ -24,7 +24,7 @@ namespace SmartMngShop.Web.Extensions.FrameworkExtensions
             {
                 options.EventsType = typeof(CookieEvents);
             });
-
+            services.AddAuthorization(); // for future customer ?? TODO Created Font-end Claim navMenu 
             return services; 
         }
     }
