@@ -1,5 +1,26 @@
-﻿<h3>RoleList</h3>
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using SmartMngShop.Web.Data
+
+@page "/iam/roles"
+@inject IDbContextFactory<AppDbContext> contextFactory
+
+<PageTitle>Roles</PageTitle>
+
+
 
 @code {
+    private List<IdentityRole> Roles { get; set; } = new();
 
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = await contextFactory.CreateDbContextAsync();
+        Roles = await context.Roles.ToListAsync();
+    }
+    private async Task DeleteRole(IdentityRole role)
+    {
+        using var context = await contextFactory.CreateDbContextAsync();
+        context.Roles.Remove(role);
+    }
 }
