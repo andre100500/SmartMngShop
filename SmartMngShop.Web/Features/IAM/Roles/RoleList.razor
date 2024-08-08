@@ -29,8 +29,15 @@
         await context.SaveChangesAsync();
         Roles.Remove(role);
     }
-    private async Task UpdateRoles (IdentityRole role)
+
+    private async Task AddRoleAsync(IdentityRole role)
     {
+        using var context = await contextFactory.CreateDbContextAsync();
+        context.Roles.Add(role);
+        await context.SaveChangesAsync();
         Roles.Add(role);
     }
+
+
+    private async Task UpdateRoles(IdentityRole role) => await AddRoleAsync(role);
 }
