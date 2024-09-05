@@ -1,0 +1,6 @@
+@SmartMngShop.Customer_HostAddress = http://localhost:5228
+
+GET {{SmartMngShop.Customer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
