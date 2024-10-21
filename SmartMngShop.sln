@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMngShop.AppHost", "Sma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMngShop.ServiceDefaults", "SmartMngShop.ServiceDefaults\SmartMngShop.ServiceDefaults.csproj", "{2F789D87-CE00-477C-A875-E28452651C19}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMngShop.Customer", "SmartMngShop.Customer\SmartMngShop.Customer.csproj", "{BF9809B2-612C-4631-B9AE-14A78123C5F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,12 +33,17 @@ Global
 		{2F789D87-CE00-477C-A875-E28452651C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F789D87-CE00-477C-A875-E28452651C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F789D87-CE00-477C-A875-E28452651C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9809B2-612C-4631-B9AE-14A78123C5F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9809B2-612C-4631-B9AE-14A78123C5F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9809B2-612C-4631-B9AE-14A78123C5F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9809B2-612C-4631-B9AE-14A78123C5F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{35063DF0-B0A9-4A82-92D3-EEA73E5492C8} = {3D3673A6-919B-4E6F-B2D3-4AAD704814CC}
+		{BF9809B2-612C-4631-B9AE-14A78123C5F7} = {3D3673A6-919B-4E6F-B2D3-4AAD704814CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E6D8663-49A2-4EBC-A3FC-51CD3DED1482}

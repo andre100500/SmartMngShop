@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SmartMngShop.Customer\SmartMngShop.Customer.csproj" />
     <ProjectReference Include="..\SmartMngShop.Web\SmartMngShop.Web.csproj" />
   </ItemGroup>
 
