@@ -10,7 +10,7 @@
 
         public int Vacation { get; set; }
 
-        private Task<List<DateCustomerWork>> CalculateVacation(int startVacation, int daysSinceStop, List<DateCustomerWork> customerWork, int minWorkingDays)
+        private Task<List<DateCustomerWork>> CalculateVacation(int startVacation, List<DateCustomerWork> customerWork)
         {
             int vacationThreshold = startVacation;
             DateTime today = DateTime.UtcNow;
