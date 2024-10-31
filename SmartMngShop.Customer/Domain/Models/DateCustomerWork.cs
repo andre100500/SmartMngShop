@@ -10,19 +10,16 @@
 
         public int Vacation { get; set; }
 
-        private List<DateCustomerWork> CalculateVacation( int startVacation, DateTime stop,List<DateCustomerWork> customerWork)
+        private List<DateCustomerWork> CalculateVacation( int startVacation, DateTime daysSinceStop, List<DateCustomerWork> customerWork)
         {
-            Vacation = startVacation;
-            var currentDate = DateTime.UtcNow;
-            var lastDateVacation = currentDate.Day - stop.Day;
+            int vacationThreshold = startVacation;
+            var lastDateVacation = (DateTime.UtcNow - daysSinceStop).Days;
             
+            var usersWithVacationLeft = customerWork
+                .Where(x => x.Vacation > vacationThreshold && x.Vacation >= daysSinceStop.Day)
+                .ToList();
 
-            if (startVacation >= lastDateVacation)
-            {
-                var userId = customerWork.Where(x => x.Id == Id && x.Name == Name && x.Vacation >= 0).ToList();
-                return userId.ToList();
-            }
-            return customerWork;
+            return usersWithVacationLeft;
         }
     }
 }
