@@ -21,7 +21,7 @@
 
                     DateTime endDate = x.DateTimeStopProgress?.ToDateTime(TimeOnly.MinValue) ?? today;
                     int daysWorked = (endDate - x.DateTimeStartProgress.ToDateTime(TimeOnly.MinValue)).Days;
-                    int vacationDays = daysWorked / 28 * 5;
+                    int vacationDays = daysWorked >28? (daysWorked/ 28) * 5 : 0;
                     return new DateCustomerWork
                     {
                         Id = x.Id,
