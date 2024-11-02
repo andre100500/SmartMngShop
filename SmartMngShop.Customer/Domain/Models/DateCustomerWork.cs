@@ -5,37 +5,37 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string JobTitle { get; set; }
-        public required DateOnly DateTimeStartPrgoress { get; set; }
-        public DateOnly? DateTimeStopPrgoress { get; set; } = null;
+        public required DateOnly DateTimeStartProgress { get; set; }
+        public DateOnly? DateTimeStopProgress { get; set; }
 
         public int Vacation { get; set; }
 
-        private Task<List<DateCustomerWork>> CalculateVacation(int startVacation, List<DateCustomerWork> customerWork)
+        public async Task<List<DateCustomerWork>> CalculateVacation(int startVacation, List<DateCustomerWork> customerWork)
         {
-            int vacationThreshold = startVacation;
+            int minimumVacationDays = startVacation;
             DateTime today = DateTime.UtcNow;
 
             var usersWithVacationLeft = customerWork
                 .Select(x =>
                 {
-                    
-                    int daysWorked = (today - x.DateTimeStartPrgoress.ToDateTime(TimeOnly.MinValue)).Days;
-                    int vacationDays = daysWorked / 28 * 5;
 
+                    DateTime endDate = x.DateTimeStopProgress?.ToDateTime(TimeOnly.MinValue) ?? today;
+                    int daysWorked = (endDate - x.DateTimeStartProgress.ToDateTime(TimeOnly.MinValue)).Days;
+                    int vacationDays = daysWorked >28? (daysWorked/ 28) * 5 : 0;
                     return new DateCustomerWork
                     {
                         Id = x.Id,
                         Name = x.Name,
                         JobTitle = x.JobTitle,
-                        DateTimeStartPrgoress = x.DateTimeStartPrgoress,
-                        DateTimeStopPrgoress = x.DateTimeStopPrgoress,
+                        DateTimeStartProgress = x.DateTimeStartProgress,
+                        DateTimeStopProgress = x.DateTimeStopProgress,
                         Vacation = vacationDays
                     };
                 })
-                .Where(x => x.Vacation > vacationThreshold)
+                .Where(x => x.Vacation > minimumVacationDays)
                 .ToList();
 
-            return Task.FromResult(usersWithVacationLeft);
+            return await Task.FromResult(usersWithVacationLeft);
         }
     }
 }
