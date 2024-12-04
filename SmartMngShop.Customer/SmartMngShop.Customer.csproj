@@ -30,8 +30,4 @@
     <ProjectReference Include="..\SmartMngShop.ServiceDefaults\SmartMngShop.ServiceDefaults.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
 </Project>
