@@ -1,6 +1,6 @@
 ﻿namespace SmartMngShop.Customer.Domain.Models
 {
-    public class Customer
+    public class CustomerUser
     {
         public int Id { get; set; }
         public required string FirstName { get; set; }

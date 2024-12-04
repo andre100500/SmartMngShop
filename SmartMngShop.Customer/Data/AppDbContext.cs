@@ -5,7 +5,7 @@ namespace SmartMngShop.Customer.Data
 {
     public class AppDbContext(DbContextOptions options) : DbContext(options)
     {
-        public DbSet<Customer> customers { get; set; }
+        public DbSet<CustomerUser> customers { get; set; }
         public DbSet<DateCustomerWork> works { get; set; }
     }
 }
